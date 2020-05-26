@@ -44,9 +44,14 @@
     padding: 20px 20px 0;
     overflow: scroll;
     margin-bottom: 40px;
+    
 
     .group{
       margin-bottom: 40px;
+      a {
+        color: #ffffff;
+      } 
+      
     }
 
     &__box__group-name{

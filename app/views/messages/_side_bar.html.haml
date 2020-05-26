@@ -6,25 +6,20 @@
         = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__edit-user
-          = link_to do
+          = link_to new_group_path do
             = icon('fas', 'edit')
         %li.side-header__box__menu__new-group
-          = link_to edit_user_path(current_user) do
+          = link_to edit_user_path(current_user.id) do
             = icon('fas', 'cog')
 
   
   .groups
-    .group
-      .groups__box
-        .groups__box__group-name
-          techcamp
-        .groups__box__latest-text
-          まだテキストはありません
-    .group
-      .groups__box
-        .groups__box__group-name
-          techcamp
-        .groups__box__latest-text
-          まだテキストはありません
+    - current_user.groups.each do |group|
+      .group
+        .groups__box
+          = link_to '#' do
+            .groups__box__group-name
+              = group.name
+            .groups__box__latest-text
+              まだテキストはありません
     
-  　
